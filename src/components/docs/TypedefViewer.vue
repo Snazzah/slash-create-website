@@ -7,9 +7,14 @@
     <p v-if="typedef.description" v-html="description" class="typedef-desc"></p>
     <see v-if="typedef.see" :see="typedef.see" :docs="docs" />
 
-    <h2>Types</h2>
+    <h2>Type</h2>
     <ul id="typedef-types">
-      <li v-for="type in typedef.type" :key="typeKey(type)"><types :names="type" :docs="docs" /></li>
+      <div v-if="typedef.props && typedef.props.length > 0">
+        <li><types names="object" :docs="docs" /></li>
+      </div>
+      <div v-else>
+        <li v-for="type in typedef.type" :key="typeKey(type)"><types :names="type" :docs="docs" /></li>
+      </div>
     </ul>
 
     <div v-if="typedef.props && typedef.props.length > 0" id="typedef-props">
@@ -82,38 +87,38 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../styles/theming';
+@import "../../styles/theming";
 
-  #typedef-viewer {
-    h1 {
-      display: inline-block;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      margin-top: 40px;
-    }
-
-    #typedef-types {
-      font-family: $font-monospace;
-    }
-
-    .param-table-wrapper {
-      border: 0;
-    }
-
-    code {
-      font-family: $font-monospace;
-      font-size: 0.8rem;
-    }
-
-    :not(pre) > code {
-      background: darken($color-content-bg, 3.5%);
-      border-radius: 2px;
-    }
+#typedef-viewer {
+  h1 {
+    display: inline-block;
   }
 
-  #app.dark #typedef-viewer :not(pre):not(.info):not(.warn) > code {
-    background: lighten($color-content-bg-dark, 3.5%);
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 40px;
   }
+
+  #typedef-types {
+    font-family: $font-monospace;
+  }
+
+  .param-table-wrapper {
+    border: 0;
+  }
+
+  code {
+    font-family: $font-monospace;
+    font-size: 0.8rem;
+  }
+
+  :not(pre) > code {
+    background: darken($color-content-bg, 3.5%);
+    border-radius: 2px;
+  }
+}
+
+#app.dark #typedef-viewer :not(pre):not(.info):not(.warn) > code {
+  background: lighten($color-content-bg-dark, 3.5%);
+}
 </style>
