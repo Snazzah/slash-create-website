@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>dbots</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- Twitter & OpenGraph data -->
+  <meta name="twitter:title" content="dbots.js">
+  <meta property="og:site_name" content="dbots.js">
+  <meta property="og:url" content="https://dbots.js.org/" />
+  <meta property="og:title" content="dbots.js" />
+  <meta property="og:description" content="A stats poster and API wrapper for all botlists." />
+
+  <!-- Image meta -->
+  <meta name="twitter:image" content="https://dbots.js.org/static/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://dbots.js.org/static/cover.png">
+  <meta property="og:image:secure" content="https://dbots.js.org/static/cover.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="dbots.js Cover">
+
+
+  <!-- Other meta data -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#e9df12">
+  <meta name="revisit-after" content="2 days">
+  <meta name="keywords" content="framework, css, easy-to-use, scss, modestacss, clean, flat, modern">
+  <link rel="icon" type="image/png" href="<%= BASE_URL %>static/icon-simplified.png">
+  <link rel="manifest" href="<%= BASE_URL %>manifest.json" />
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+    async></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>Sorry, but the dbots website doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <script>
+    if ("serviceWorker" in navigator) {
+      try {
+        navigator.serviceWorker.register("/sw.js");
+      } catch (e) {
+        console.error("Error registering service worker", e);
+      }
+    }
+  </script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

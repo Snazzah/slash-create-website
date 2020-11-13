@@ -1,0 +1,41 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - stable
+
+jobs:
+  deploy:
+    name: Deploy to master branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - run: git config user.name "${GITHUB_ACTOR}"
+      - run: git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - run: npm run dist
+
+      - run: git push origin `git subtree split --prefix dist stable`:master --force
+
+  lint:
+    name: Lint stable branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - run: npm i
+      - run: npm run lint
+
+      - uses: EndBug/add-and-commit@v4
+        with:
+          add: src
+          message: "[auto] Lint source code"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

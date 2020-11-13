@@ -1,0 +1,26 @@
+// https://github.com/AlexFlipnote/Discord_Theme/blob/master/scss/assets/_animation.scss
+
+@mixin prefix($name, $argument) {
+  #{$name}: #{$argument};
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+}
+
+@mixin keyframes($animationname) {
+  // scss-lint:disable VendorPrefix
+  @-webkit-keyframes #{$animationname} {
+    @content;
+  }
+  @-moz-keyframes #{$animationname} {
+    @content;
+  }
+  @-o-keyframes #{$animationname} {
+    @content;
+  }
+  @keyframes #{$animationname} {
+    @content;
+  }
+  // scss-lint:enable VendorPrefix
+}
