@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
 
-      - run: npm i
+      - run: git config --global user.email "fgrandi30@gmail.com"
+      - run: git config --global user.name "Federico Grandi"
+
       - run: npm run deploy
 
   lint:
