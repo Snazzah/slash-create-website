@@ -6,7 +6,8 @@
   "author": "Federico Grandi <fgrandi30@gmail.com>",
   "scripts": {
     "build": "vue-cli-service build",
-    "dist": "echo Preparing for distribution... && npm i && npm run build && git add dist --force && git commit -m \"Update dist files\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "vue-cli-service lint --fix",
     "serve": "vue-cli-service serve",
     "serve:production": "vue-cli-service serve --mode production",
@@ -15,6 +16,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "fuse.js": "^3.4.5",
+    "gh-pages": "^3.1.0",
     "konami-code-js": "^0.8.1",
     "marked": "^0.7.0",
     "semver": "^6.3.0",
