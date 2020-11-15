@@ -13,6 +13,7 @@ jobs:
 
       - run: git config --global user.email "fgrandi30@gmail.com"
       - run: git config --global user.name "Federico Grandi"
+      - run: git remote set-url origin https://dbots-pkg:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
 
       - run: npm i
       - run: npm run deploy
