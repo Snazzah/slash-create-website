@@ -14,6 +14,7 @@ jobs:
       - run: git config --global user.email "fgrandi30@gmail.com"
       - run: git config --global user.name "Federico Grandi"
 
+      - run: npm i
       - run: npm run deploy
 
   lint:
