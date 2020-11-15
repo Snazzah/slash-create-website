@@ -7,7 +7,7 @@
         <router-link to="/docs">Documentation</router-link>
         <a :href="`https://github.com/${repository}`">GitHub</a>
         <nav class="hidden-nav" :class="visible ? 'open' : 'closed'">
-          <a href="https://github.com/dbots-pkg/dbots-pkg.github.io">Website Source</a>
+          <a href="https://github.com/dbots-pkg/dbots-website">Website Source</a>
           <router-link to="/services">Services</router-link>
         </nav>
         <a class="nav-open-btn" @click="toggle">
