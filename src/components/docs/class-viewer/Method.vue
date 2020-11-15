@@ -45,12 +45,12 @@
         <router-link v-else :to="emits[0].link" class="docs-type">{{ emits[0].text }}</router-link>
       </div>
 
-      <div v-if="method.examples" class="method-examples">
+      <div v-if="method.examples && method.examples.length > 0" class="method-examples">
         Examples:
         <pre v-for="example in method.examples" :key="example"><code class="javascript">{{ example }}</code></pre>
       </div>
 
-      <see v-if="method.see" :see="method.see" :docs="docs" />
+      <see v-if="method.see && method.see.length > 0" :see="method.see" :docs="docs" />
     </div>
   </div>
 </template>
@@ -106,80 +106,84 @@ export default {
 </script>
 
 <style lang="scss">
-	@import '../../../styles/theming';
+@import "../../../styles/theming";
 
-	.class-method {
-		p:not(.docs-see) {
-			margin: 0 0 12px 0;
-		}
+.class-method {
+  p:not(.docs-see) {
+    margin: 0 0 12px 0;
+  }
 
-		h3 a:hover .method-param {
-			color: $color-primary !important;
-		}
-	}
+  h3 a:hover .method-param {
+    color: $color-primary !important;
+  }
+}
 
-	.method-param {
-		color: lighten($color-content-text, 20%);
-		font-size: 1rem;
-    transition: color 0.3s;
+.method-param {
+  color: lighten($color-content-text, 20%);
+  font-size: 1rem;
+  transition: color 0.3s;
 
-		&.optional:before {
-			content: '[';
-		}
+  &.optional:before {
+    content: "[";
+  }
 
-		&.optional:last-child:after {
-			content: ']';
-		}
+  &.optional:last-child:after {
+    content: "]";
+  }
 
-		&.optional:not(:last-child):after {
-			content: '], ';
-		}
+  &.optional:not(:last-child):after {
+    content: "], ";
+  }
 
-		&:not(:last-child):after {
-			content: ', '
-		}
-	}
+  &:not(:last-child):after {
+    content: ", ";
+  }
+}
 
-	.method-return {
-		margin-top: 20px;
-		color: lighten($color-content-text, 35%);
-    font-weight: bold;
+.method-return {
+  margin-top: 20px;
+  color: lighten($color-content-text, 35%);
+  font-weight: bold;
 
-		.docs-type {
-			font-family: $font-monospace;
-		}
+  .docs-type {
+    font-family: $font-monospace;
+  }
+
+  p {
+    color: lighten($color-content-text, 10%);
+    font-weight: normal;
+  }
+}
+
+.method-throws,
+.method-emits,
+.method-examples {
+  margin-top: 16px;
+  color: lighten($color-content-text, 35%);
+  font-weight: bold;
+
+  pre {
+    font-weight: normal;
+  }
+}
+
+#app.dark {
+  .method-param {
+    color: darken($color-content-text-dark, 20%);
+  }
+
+  .method-return {
+    color: darken($color-content-text-dark, 35%);
 
     p {
-      color: lighten($color-content-text, 10%);
-      font-weight: normal;
-    }
-	}
-
-	.method-throws, .method-emits, .method-examples {
-		margin-top: 16px;
-		color: lighten($color-content-text, 35%);
-    font-weight: bold;
-
-		pre {
-			font-weight: normal;
-		}
-  }
-
-  #app.dark {
-    .method-param {
-      color: darken($color-content-text-dark, 20%);
-    }
-
-    .method-return {
-      color: darken($color-content-text-dark, 35%);
-
-      p {
-        color: darken($color-content-text-dark, 10%);
-      }
-    }
-
-    .method-throws, .method-emits, .method-examples {
-      color: darken($color-content-text-dark, 35%);
+      color: darken($color-content-text-dark, 10%);
     }
   }
+
+  .method-throws,
+  .method-emits,
+  .method-examples {
+    color: darken($color-content-text-dark, 35%);
+  }
+}
 </style>
