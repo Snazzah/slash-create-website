@@ -59,8 +59,11 @@ export default {
           boolean: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean',
           symbol: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol',
           void: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined',
+          undefined: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined',
+          any: 'https://www.typescriptlang.org/docs/handbook/basic-types.html#any',
           null: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null',
           Object: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object',
+          object: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object',
           Function: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function',
           function: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function',
           Array: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array',
@@ -78,6 +81,7 @@ export default {
           Worker: 'https://nodejs.org/api/worker_threads.html#worker_threads_class_worker',
           MessagePort: 'https://nodejs.org/api/worker_threads.html#worker_threads_class_messageport',
           AxiosResponse: 'https://github.com/axios/axios#response-schema',
+          Record: 'https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeystype',
         };
 
         // Add links for everything
@@ -194,44 +198,44 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../styles/theming';
+@import "../../styles/theming";
 
-  #docs-body {
+#docs-body {
+  background: $color-content-bg;
+
+  .sk-folding-cube {
+    display: block;
+    margin: 200px auto;
+  }
+  .sk-cube:before {
     background: $color-content-bg;
-
-    .sk-folding-cube {
-      display: block;
-      margin: 200px auto;
-    }
-    .sk-cube:before {
-      background: $color-content-bg;
-    }
   }
+}
 
-  #docs-error {
-    padding: 50px 0;
-    text-align: center;
-    font-size: 1.5rem;
+#docs-error {
+  padding: 50px 0;
+  text-align: center;
+  font-size: 1.5rem;
 
-    pre {
-      font-size: 1.0rem;
-    }
+  pre {
+    font-size: 1rem;
   }
+}
 
-  #app.dark #docs-body {
+#app.dark #docs-body {
+  background: $color-content-bg-dark;
+  color: $color-content-text-dark;
+
+  .sk-cube:before {
     background: $color-content-bg-dark;
-    color: $color-content-text-dark;
-
-    .sk-cube:before {
-      background: $color-content-bg-dark;
-    }
   }
+}
 
-  [data-scrolled] {
-    transition: background 1s;
-  }
+[data-scrolled] {
+  transition: background 1s;
+}
 
-  [data-scrolled='true'] {
-    background: $color-scrolled-bg;
-  }
+[data-scrolled="true"] {
+  background: $color-scrolled-bg;
+}
 </style>
