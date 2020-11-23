@@ -35,7 +35,7 @@
         <types v-for="thrw in method.throws" :names="thrw" :docs="docs" :key="thrw" />
       </div>
 
-      <div v-if="emits" class="method-emits">
+      <div v-if="emits && emits.length > 0" class="method-emits">
         Emits:
         <ul v-if="emits.length > 1">
           <li v-for="event in emits" :key="event.text">
