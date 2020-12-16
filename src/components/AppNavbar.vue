@@ -1,15 +1,12 @@
 <template>
   <header>
     <container>
-      <router-link to="/">dbots.js</router-link>
+      <router-link to="/">/create</router-link>
 
       <nav>
         <router-link to="/docs">Documentation</router-link>
         <a :href="`https://github.com/${repository}`">GitHub</a>
-        <nav class="hidden-nav" :class="visible ? 'open' : 'closed'">
-          <a href="https://github.com/dbots-pkg/dbots-website">Website Source</a>
-          <router-link to="/services">Services</router-link>
-        </nav>
+        <nav class="hidden-nav" :class="visible ? 'open' : 'closed'" />
         <a class="nav-open-btn" @click="toggle">
           <em class="fa fa-bars"></em>
         </a>

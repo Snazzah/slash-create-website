@@ -1,4 +1,4 @@
-const GITHUB_ORG = 'https://raw.githubusercontent.com/dbots-pkg/';
+const GITHUB_ORG = 'https://raw.githubusercontent.com/Snazzah/';
 
 self.addEventListener('fetch', event => {
   const req = event.request;

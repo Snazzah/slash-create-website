@@ -1,7 +1,7 @@
 {
-  "name": "dbots.js Documentation",
-  "short_name": "dbots.js Docs",
-  "theme_color": "#fc7b03",
+  "name": "slash-create Documentation",
+  "short_name": "/create Docs",
+  "theme_color": "#fc2929",
   "background_color": "#2f3236",
   "display": "browser",
   "Scope": "/",

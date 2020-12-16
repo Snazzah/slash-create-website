@@ -2,20 +2,17 @@
   <footer>
     <container>
       <strong>
-        <router-link to="/">dbots</router-link>
+        <router-link to="/">/create</router-link>
       </strong>
-      <p>The universal count poster</p>
-      <a class="icon-link" href="https://github.com/dbots-pkg">
+      <p>Creator and handler for Discord's slash commands</p>
+      <a class="icon-link" href="https://github.com/Snazzah/slash-create">
         <i class="fab fa-github"></i>
       </a>
-      <a class="icon-link" href="https://npmjs.org/package/dbots">
+      <a class="icon-link" href="https://npmjs.org/package/slash-create">
         <i class="fab fa-npm"></i>
       </a>
-      <a class="icon-link" href="https://yarn.pm/dbots">
+      <a class="icon-link" href="https://yarn.pm/slash-create">
         <i class="fab fa-yarn"></i>
-      </a>
-      <a class="icon-link" href="https://www.jsdelivr.com/package/npm/dbots">
-        <i class="fa fa-server"></i>
       </a>
       <stats/>
       <a href id="dark-mode-link" @click="toggleDarkMode">
@@ -30,7 +27,7 @@
 import Stats from './Stats.vue';
 
 export default {
-  name: 'footer',
+  name: 'AppFooter',
   props: ['darkMode'],
   components: {
     Stats,

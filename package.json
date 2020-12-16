@@ -1,8 +1,8 @@
 {
-  "name": "dbots-website",
+  "name": "slash-create-website",
   "version": "2.3.0",
   "private": true,
-  "description": "The website housing documentation for dbots",
+  "description": "The website housing documentation for /create",
   "author": "Federico Grandi <fgrandi30@gmail.com>",
   "scripts": {
     "build": "vue-cli-service build",

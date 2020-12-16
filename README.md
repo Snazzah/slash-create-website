@@ -1,10 +1,10 @@
-# dbots website
+# /create website
 
-> The website housing documentation for dbots
+> The website housing documentation for /create
 
 ## Website source
 
-This website is forked from https://github.com/discordjs/website
+This website is forked from https://github.com/dbots-pkg/dbots-website which is forked from https://github.com/discordjs/website
 
 ## Project setup
 ```

@@ -6,7 +6,7 @@
       <br>
       <br>
       <div class="cli-command">
-        <code>{{ yarn ? 'yarn add' : 'npm i' }} {{ showDevCommand ? (yarn ? `ssh://github.com/${repo}#master` : `${repo}#master`) : 'dbots' }}</code>
+        <code>{{ yarn ? 'yarn add' : 'npm i' }} {{ showDevCommand ? (yarn ? `ssh://github.com/${repo}#master` : `${repo}#master`) : 'slash-create' }}</code>
         <em v-on:click="copy" class="fa fa-clipboard"></em>
       </div>
       <div class="below-command">
@@ -19,27 +19,38 @@
     <section id="info">
       <div class="info-item">
         <h2>About</h2>
-        <p>dbots.js is a package that allows you to automatically post your bot stats to multiple bot lists.</p>
-        <p>The module also provides some interfaces for other requests to the list APIs, so that everything can be done with the same package, instead of having to make the requests youself or dealing with multiple packages.</p>
+        <p>/create is a <a href="https://nodejs.org">Node.JS</a> module that handles Discord's <a href="https://discord.com/developers/docs/interactions/slash-commands">slash commands</a> similar to Discord.JS <a href="https://github.com/discordjs/Commando">Commando</a>.</p>
+        <p>Create slash commands with ease with syncing capabilities to make sure Discord handles them correctly upon start-up.</p>
       </div>
 
       <div class="info-item">
         <h2>Example</h2>
-        <pre><code class="javascript" v-hljs>const Discord = require('discord.js');
-const client = new Discord.Client();
-const dbots = require('dbots');
-const poster = new dbots.Poster({
-    client,
-    apiKeys: {
-        discordbotsgg: '…',
-        topgg: '…',
-        lsterminalink: '…',
-        carbon: '…'
-    },
-    clientLibrary: 'discord.js'
+        <pre><code class="javascript" v-hljs>const { Creator } = require('slash-create');
+const path = require('path');
+const creator = new Creator({
+  applicationID: '12345678901234567',
+  publicKey: 'CLIENT_PUBLIC_KEY',
+  token: 'BOT_TOKEN_HERE',
 });
 
-poster.startInterval(); // starts an interval thats posts to all services every 30 minutes</code></pre>
+creator
+    // Registers all of your commands in the ./commands/ directory
+    .registerCommandsIn(path.join(__dirname, 'commands'))
+    // This will sync commands to Discord, it must be called after commands are loaded.
+    // This also returns itself for more chaining capabilities.
+    .syncCommands();</code></pre>
+      </div>
+
+      <div class="info-item">
+        <h2>Features</h2>
+        <p>
+          <ul>
+            <li>Support for modules like <a href="https://expressjs.org">Express</a></li>
+            <li>Hook into an existing <a href="#/docs/main/stable/examples/discord-bot">Discord bot</a></li>
+            <li>Command syncing - Sync commands with your creator automatically.</li>
+            <li>Load commands from a folder</li>
+          </ul>
+        </p>
       </div>
 
       <div class="info-item">
@@ -52,7 +63,6 @@ poster.startInterval(); // starts an interval thats posts to all services every 
 
       <div class="full-info-item">
         <router-link to="/docs" class="big-ass-btn">Get started</router-link>
-        <router-link to="/services" class="big-ass-btn">Supported Services</router-link>
       </div>
     </section>
   </div>
