@@ -13,7 +13,7 @@ import SourceButton from './SourceButton.vue';
 
 export default {
   name: 'file-viewer',
-  props: ['docs', 'darkMode'],
+  props: ['docs', 'darkMode', 'tag'],
   components: {
     SourceButton,
   },
@@ -27,8 +27,14 @@ export default {
 
   computed: {
     html() {
+      const convertMarkdown = content => content
+        // Replace $$$ref with the branch/tag
+        .replace(/\$\$\$ref/g, this.$route.params.tag)
+        // Replace long url with short ref
+        .replace(/https:\/\/slash-create\.js\.org\/#([\w/]+)/, '#$1');
+
       let content;
-      if (this.file.type === 'md') content = this.file.content;
+      if (this.file.type === 'md') content = convertMarkdown(this.file.content);
       else content = `# ${this.file.name}\n\`\`\`${this.file.type}\n${this.file.content}\n\`\`\``;
       return Vue.filter('marked')(content);
     },
