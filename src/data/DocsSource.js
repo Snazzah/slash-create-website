@@ -77,6 +77,6 @@ export default class DocsSource {
       if (localTest) return new Promise(res => res(localTest));
       // eslint-disable-next-line no-empty
     } catch { }
-    return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag}.json`).then(json);
+    return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag.split('/').reverse()[0]}.json`).then(json);
   }
 }
