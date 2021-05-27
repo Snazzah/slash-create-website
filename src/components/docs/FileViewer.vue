@@ -29,7 +29,7 @@ export default {
     html() {
       const convertMarkdown = content => content
         // Replace $$$ref with the branch/tag
-        .replace(/\$\$\$ref/g, this.$route.params.tag)
+        .replace(/\$\$\$ref/g, encodeURIComponent(this.$route.params.tag))
         // Replace long url with short ref
         .replace(/https:\/\/slash-create\.js\.org\/#([\w/]+)/, '#$1');
 
