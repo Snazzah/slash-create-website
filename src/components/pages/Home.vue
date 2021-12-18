@@ -45,10 +45,11 @@ creator
         <h2>Features</h2>
         <p>
           <ul>
-            <li>Support for modules like <a href="https://expressjs.org">Express</a></li>
+            <li>Support for modules like <a href="https://expressjs.org">Express</a> or <a href="https://fastify.io">Fastify</a></li>
             <li>Hook into an existing <a href="#/docs/main/stable/examples/discord-bot">Discord bot</a></li>
-            <li>Command syncing - Sync commands with your creator automatically.</li>
+            <li>Sync loaded commands to Discord from slash-create</li>
             <li>Load commands from a folder</li>
+            <li>Use within services like <a href="#/docs/main/stable/examples/cfworker">Cloudflare Workers</a>, <a href="#/docs/main/stable/examples/gcf">Google Cloud Functions</a>, <a href="#/docs/main/stable/examples/lambda">AWS Lambda</a>, <a href="#/docs/main/stable/examples/azure">Azure Functions</a>, and <a href="#/docs/main/stable/examples/vercel">Vercel</a></li>
           </ul>
         </p>
       </div>
