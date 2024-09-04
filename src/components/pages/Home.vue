@@ -19,7 +19,7 @@
     <section id="info">
       <div class="info-item">
         <h2>About</h2>
-        <p>/create is a <a href="https://nodejs.org">Node.JS</a> module that handles Discord's <a href="https://discord.com/developers/docs/interactions/slash-commands">slash commands</a> similar to Discord.JS <a href="https://github.com/discordjs/Commando">Commando</a>.</p>
+        <p>/create is a <a href="https://nodejs.org">Node.JS</a> module that handles Discord's <a href="https://discord.com/developers/docs/interactions/slash-commands">slash commands</a>.</p>
         <p>Create slash commands with ease with syncing capabilities to make sure Discord handles them correctly upon start-up.</p>
       </div>
 
@@ -46,10 +46,10 @@ creator
         <p>
           <ul>
             <li>Support for modules like <a href="https://expressjs.org">Express</a> or <a href="https://fastify.io">Fastify</a></li>
-            <li>Hook into an existing <a href="#/docs/main/stable/examples/discord-bot">Discord bot</a></li>
+            <li>Hook into an existing <a href="#/docs/main/latest/examples/discord-bot">Discord bot</a></li>
             <li>Sync loaded commands to Discord from slash-create</li>
             <li>Load commands from a folder</li>
-            <li>Use within services like <a href="#/docs/main/stable/examples/cfworker">Cloudflare Workers</a>, <a href="#/docs/main/stable/examples/gcf">Google Cloud Functions</a>, <a href="#/docs/main/stable/examples/lambda">AWS Lambda</a>, <a href="#/docs/main/stable/examples/azure">Azure Functions</a>, and <a href="#/docs/main/stable/examples/vercel">Vercel</a></li>
+            <li>Use within services like <a href="#/docs/main/latest/examples/cfworker">Cloudflare Workers</a>, <a href="#/docs/main/latest/examples/gcf">Google Cloud Functions</a>, <a href="#/docs/main/latest/examples/lambda">AWS Lambda</a>, <a href="#/docs/main/latest/examples/azure">Azure Functions</a>, and <a href="#/docs/main/latest/examples/vercel">Vercel</a></li>
           </ul>
         </p>
       </div>
