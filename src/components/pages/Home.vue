@@ -45,7 +45,7 @@ creator
         <h2>Features</h2>
         <p>
           <ul>
-            <li>Support for modules like <a href="https://expressjs.org">Express</a> or <a href="https://fastify.io">Fastify</a></li>
+            <li>Support for modules like <a href="https://expressjs.com">Express</a> or <a href="https://fastify.io">Fastify</a></li>
             <li>Hook into an existing <a href="#/docs/main/latest/examples/discord-bot">Discord bot</a></li>
             <li>Sync loaded commands to Discord from slash-create</li>
             <li>Load commands from a folder</li>
